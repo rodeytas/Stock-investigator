@@ -2,7 +2,7 @@ import requests
 import sys
 import re
 from bs4 import BeautifulSoup
-stocks = ['ACB', 'APHA', 'AUY', 'AMD', 'VSTM', 'BBBY']
+stocks = ['ACB', 'APHA', 'AUY', 'AMD', 'AAPL', 'BBBY']
 company_names = []
 prices = []
 percent_changes = []
