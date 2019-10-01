@@ -1,0 +1,7 @@
+2019-09-30 22:09:14.661378
+('ACB\n', 'ACB Aurora Cannabis Inc. Stock Quote', '$4.39', '-4.98%', '13.33M', '18,426,581', '138.55% of average volume')
+('AAPL\n', 'AAPL Apple Inc. Stock Quote', '$223.97', '2.35%', '26.71M', '25,975,889', '97.29% of average volume')
+('AMD\n', 'AMD Advanced Micro Devices, Inc. Stock Quote', '$28.99', '0.94%', '59.96M', '37,295,604', '62.26% of average volume')
+('AUY\n', 'AUY Yamana Gold Inc. Stock Quote', '$3.18', '-3.05%', '17.65M', '14,401,064', '81.82% of average volume')
+('BBBY\n', 'BBBY Bed Bath & Beyond Inc. Stock Quote', '$10.64', '7.58%', '7.18M', '12,690,676', '178.74% of average volume')
+('LXRX', 'LXRX Lexicon Pharmaceuticals, Inc. Stock Quote', '$3.01', '-12.37%', '2.31M', '3,601,289', '156.58% of average volume')

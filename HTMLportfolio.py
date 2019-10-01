@@ -1,7 +1,9 @@
 import requests
+import datetime
 import sys
 import re
 from bs4 import BeautifulSoup
+now = datetime.datetime.now()
 stocks = []
 company_names = []
 prices = []
@@ -12,6 +14,7 @@ volume_percents = []
 def portfolio_scraper(stocks):
         scrape = open("stocks.txt", "r")
         stocks = scrape.readlines()
+        scrape.close()
         for stock in stocks:
                 URL='https://finviz.com/quote.ashx?t=' + stock
                 source = requests.get(URL)
@@ -39,7 +42,11 @@ def portfolio_scraper(stocks):
                 volume_percent = str(round((float(float(volume_today)/average_volume) * 100), 2)) + '%'
                 volume_percents.append(volume_percent + ' of average volume')
         portfolio = list(zip(stocks, company_names, prices, percent_changes, average_volumes, volumes_today, volume_percents))
+        savefile = open("portfolio.txt", "a+")
+        savefile.write(str(now))
+        savefile.write("\n")
         for asset in portfolio:
-                print(asset)
+                savefile.write(str(asset))
+                savefile.write("\n")
         return company_names
 portfolio_scraper(stocks)
