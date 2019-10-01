@@ -5,3 +5,14 @@
 ('AUY\n', 'AUY Yamana Gold Inc. Stock Quote', '$3.18', '-3.05%', '17.65M', '14,401,064', '81.82% of average volume')
 ('BBBY\n', 'BBBY Bed Bath & Beyond Inc. Stock Quote', '$10.64', '7.58%', '7.18M', '12,690,676', '178.74% of average volume')
 ('LXRX', 'LXRX Lexicon Pharmaceuticals, Inc. Stock Quote', '$3.01', '-12.37%', '2.31M', '3,601,289', '156.58% of average volume')
+2019-09-30 22:15:43.873355
+('ACB\n', 'ACB Aurora Cannabis Inc. Stock Quote', '$4.39', '-4.98%', '13.33M', '18,426,581', '138.55% of average volume')
+('AAPL\n', 'AAPL Apple Inc. Stock Quote', '$223.97', '2.35%', '26.71M', '25,975,889', '97.29% of average volume')
+('AMD\n', 'AMD Advanced Micro Devices, Inc. Stock Quote', '$28.99', '0.94%', '59.96M', '37,295,604', '62.26% of average volume')
+('FB\n', 'FB Facebook, Inc. Stock Quote', '$178.08', '0.55%', '14.36M', '10,739,941', '75.1% of average volume')
+('F\n', 'F Ford Motor Company Stock Quote', '$9.16', '0.88%', '36.24M', '21,509,244', '59.42% of average volume')
+('BBBY\n', 'BBBY Bed Bath & Beyond Inc. Stock Quote', '$10.64', '7.58%', '7.18M', '12,690,676', '178.74% of average volume')
+('LXRX', 'LXRX Lexicon Pharmaceuticals, Inc. Stock Quote', '$3.01', '-12.37%', '2.31M', '3,601,289', '156.58% of average volume')
+2019-09-30 23:18:49.696487
+('AAPL\n', 'AAPL Apple Inc. Stock Quote', '$223.97', '2.35%', '26.71M', '25,975,889', '97.29% of average volume')
+('MSFT\n', 'MSFT Microsoft Corporation Stock Quote', '$139.03', '0.94%', '24.37M', '17,280,917', '71.11% of average volume')

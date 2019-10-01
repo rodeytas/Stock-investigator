@@ -23,7 +23,6 @@ def portfolio_scraper(stocks):
                 price = table[71].text
                 price_string = '$' + price
                 percent_change_string = table[77].text
-                percent_change = float(percent_change_string[0:-2])
                 volume_today_string = table[76].text
                 volume_today = int(volume_today_string.replace(',', ''))
                 average_volume_string = table[70].text
