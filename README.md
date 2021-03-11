@@ -2,9 +2,9 @@
 Stock investigating code, built to easily and quickly get applicable information for algorithmic trading
 
 # Input:
-  Stock Ticker Symbol, maybe a list of ticker symbols
+A list of symbols
 # Output:
-  Information from given ticker symbol displayed in terminal
+Information from given ticker symbol to a text file
   
   
 ### Created by:
