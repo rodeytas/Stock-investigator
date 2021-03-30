@@ -1,51 +1,30 @@
+import gspread
 import requests
 import datetime
+import time
 import sys
 import re
 from bs4 import BeautifulSoup
 now = datetime.datetime.now()
-stocks = []
-company_names = []
-prices = []
-percent_changes = []
-average_volumes = []
-volumes_today = []
-volume_percents = []
+stocks = ['AAPL', 'MSFT']
+
 def portfolio_scraper(stocks):
-        scrape = open("stocks.txt", "r")
-        stocks = scrape.readlines()
-        scrape.close()
+        portfolio_info = []
         for stock in stocks:
-                URL='https://finviz.com/quote.ashx?t=' + stock
-                source = requests.get(URL)
-                soup = BeautifulSoup(source.content, 'lxml')
-                table = soup.findAll('b')
-                price = table[71].text
-                price_string = '$' + price
-                percent_change_string = table[77].text
-                volume_today_string = table[76].text
-                volume_today = int(volume_today_string.replace(',', ''))
-                average_volume_string = table[70].text
-                if average_volume_string[-1] == 'M':
-                        average_volume = float(average_volume_string[0:-2]) * 1000000
-                elif average_volume_string[-1] == 'K':
-                        average_volume = int(float(average_volume_string[0:-2]) * 1000)
-                else:
-                        average_volume = average_volume_string
-                company_name = soup.find('title').text
-                prices.append(price_string)
-                percent_changes.append(percent_change_string)
-                average_volumes.append(average_volume_string)
-                volumes_today.append(volume_today_string)
-                company_names.append(company_name)
-                volume_percent = str(round((float(float(volume_today)/average_volume) * 100), 2)) + '%'
-                volume_percents.append(volume_percent + ' of average volume')
-        portfolio = list(zip(stocks, company_names, prices, percent_changes, average_volumes, volumes_today, volume_percents))
-        savefile = open("portfolio.txt", "a+")
-        savefile.write(str(now))
-        savefile.write("\n")
-        for asset in portfolio:
-                savefile.write(str(asset))
-                savefile.write("\n")
-        return company_names
+            URL='https://finance.yahoo.com/quote/' + stock
+            source = requests.get(URL)
+            soup = BeautifulSoup(source.content, 'lxml')
+            price = soup.find('span', attrs={"data-reactid": "50"}).text
+            price_string = '$' + price
+            change = soup.find('span', attrs={"data-reactid": "51"}).text
+            changelist = change.split(' ')
+            percent_change = changelist[-1].replace('(', '').replace(')', '')
+            dollar_change = changelist[0]
+            stock = {}
+            stock['Price'] = price_string
+            stock['Percent Change'] = percent_change
+            stock['$ Change'] = dollar_change
+            portfolio_info.append(stock)
+        portfolio = {stock:info for stock, info in zip(stocks, portfolio_info)}
+        print(portfolio)
 portfolio_scraper(stocks)
