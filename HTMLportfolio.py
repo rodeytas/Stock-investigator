@@ -48,9 +48,9 @@ def portfolio_scraper(stocks, ss):
             gs_percent_change = ss.cell(gs_ticker_location.row, gs_ticker_location.col + 3)
 
             #Updating the information in the google sheet
-            gs_dollar_value.update(price)
-            gs_dollar_change.update(dollar_change)
-            gs_percent_change.update(percent_change)
+            ss.update(gs_dollar_value, price)
+            ss.update(gs_dollar_change, dollar_change)
+            ss.update(gs_percent_change, percent_change)
             
         #Creating the entire portfolio as standard input (incase you want to use this in another program) (This is as a dictionary)
         portfolio = {stock:info for stock, info in zip(stocks, portfolio_info)}
